@@ -1,0 +1,92 @@
+//
+//  GuideViewController.m
+//  MixApp
+//
+//  Created by 陈雪丹 on 16/7/19.
+//  Copyright © 2016年 cxd. All rights reserved.
+//
+
+#import "GuideViewController.h"
+#import "GuideCell.h"
+
+@interface GuideViewController () <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+
+@property (nonatomic, strong)UICollectionView *collectionView;
+@property (nonatomic, strong)UICollectionViewFlowLayout *layout;
+@property (nonatomic, strong)UIPageControl *pageControl;
+@property (nonatomic, strong)NSArray *imageNames;
+
+@end
+
+@implementation GuideViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+
+- (void)initData {
+    _imageNames = @[@"guide_40_1",@"guide_40_2",@"guide_40_3",@"guide_40_4"];
+}
+
+- (void)createView {
+    [self.view addSubview:self.collectionView];
+    self.pageControl.numberOfPages = _imageNames.count;
+    [self.view addSubview:self.pageControl];
+}
+
+- (UICollectionViewFlowLayout *)layout {
+    if (!_layout) {
+        _layout = [[UICollectionViewFlowLayout alloc] init];
+        _layout.minimumInteritemSpacing = 0;
+        _layout.minimumLineSpacing = 0;
+        _layout.itemSize = [UIScreen mainScreen].bounds.size;
+        _layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    }
+    return _layout;
+}
+
+- (UICollectionView *)collectionView {
+    if (!_collectionView) {
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0,kScreenWidth,kScreenHeight) collectionViewLayout:self.layout];
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        _collectionView.pagingEnabled = YES;
+        _collectionView.showsVerticalScrollIndicator = NO;
+        _collectionView.showsHorizontalScrollIndicator = NO;
+        _collectionView.bounces = NO;
+        [_collectionView registerClass:[GuideCell class] forCellWithReuseIdentifier:@"GuideCell"];
+    }
+    return _collectionView;
+}
+
+- (UIPageControl *)pageControl {
+    if (!_pageControl) {
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, kScreenHeight - 50, kScreenWidth, 20)];
+        _pageControl.currentPage = 0;
+    }
+    return _pageControl;
+}
+
+#pragma mark - UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.imageNames.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    GuideCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"GuideCell" forIndexPath:indexPath];
+    [cell.imageView setImage:[UIImage imageNamed:_imageNames[indexPath.item]]];
+    if (indexPath.item == _imageNames.count - 1) {
+        cell.nextButton.hidden = NO;
+    }else {
+        cell.nextButton.hidden = YES;
+    }
+    return cell;
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    self.pageControl.currentPage = scrollView.contentOffset.x / kScreenWidth;
+}
+
+@end

@@ -1,0 +1,51 @@
+//
+//  ShoppingCartController.m
+//  MixApp
+//
+//  Created by 陈雪丹 on 16/7/19.
+//  Copyright © 2016年 cxd. All rights reserved.
+//
+
+#import "ShoppingCartController.h"
+#import "MainTabBarController.h"
+#import "ConnectTipView.h"
+
+@interface ShoppingCartController ()
+
+@property (nonatomic, strong)ConnectTipView *tipView;
+
+@end
+
+@implementation ShoppingCartController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    
+    
+    [self buildEmptyUI];
+}
+
+- (void)addNSNotification {
+}
+
+
+
+- (void)buildEmptyUI {
+    [self.view addSubview:self.tipView];
+}
+
+#pragma mark -懒加载
+- (ConnectTipView *)tipView {
+    if (!_tipView) {
+        _tipView = [[ConnectTipView alloc] initWithFrame:CGRectMake(0, kScreenHeight / 2 - 300, kScreenWidth, 600) imageName:@"v2_shop_empty" title:@"亲,购物车空空的耶~赶紧挑好吃的吧" buttonTitle:@"去逛逛" buttonBlock:^{
+            MainTabBarController *tabBarController = (MainTabBarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+            [tabBarController setSelectIndexFrom:3 to:0];
+        }];
+    }
+    return _tipView;
+}
+
+
+@end

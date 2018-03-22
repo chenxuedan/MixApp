@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ChooseTimeCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="95" height="65"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="95" height="65"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="团期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7x7-im-2oS">
+                        <rect key="frame" x="35" y="40" width="25" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iV5-Cc-k2z">
+                        <rect key="frame" x="32" y="5" width="30" height="30"/>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="7nJ-Gq-WGw"/>
+                            <constraint firstAttribute="height" constant="30" id="vDd-vl-Tpq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="iV5-Cc-k2z" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="30E-cN-Ika"/>
+                <constraint firstItem="7x7-im-2oS" firstAttribute="top" secondItem="iV5-Cc-k2z" secondAttribute="bottom" constant="5" id="dhb-Qx-Nt4"/>
+                <constraint firstItem="7x7-im-2oS" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="lbV-z2-D2V"/>
+                <constraint firstItem="iV5-Cc-k2z" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="q2h-2J-8VV"/>
+            </constraints>
+            <size key="customSize" width="95" height="67"/>
+            <connections>
+                <outlet property="priceLabel" destination="7x7-im-2oS" id="5fe-dc-1Ih"/>
+                <outlet property="timeLabel" destination="iV5-Cc-k2z" id="gHB-10-Uyv"/>
+            </connections>
+            <point key="canvasLocation" x="11.5" y="62"/>
+        </collectionViewCell>
+    </objects>
+</document>

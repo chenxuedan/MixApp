@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="TopBannerView">
+            <rect key="frame" x="0.0" y="0.0" width="261" height="220"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NId-Fd-VsX">
+                    <rect key="frame" x="0.0" y="0.0" width="261" height="220"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvV-QC-YKv">
+                    <rect key="frame" x="246" y="191" width="0.0" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="wxK-63-YVe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8n-5E-yhN">
+                    <rect key="frame" x="15" y="191" width="231" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="MvV-QC-YKv" secondAttribute="bottom" constant="8" id="4bt-Qs-SHp"/>
+                <constraint firstAttribute="trailing" secondItem="MvV-QC-YKv" secondAttribute="trailing" constant="15" id="WW8-dY-mmp"/>
+                <constraint firstAttribute="bottom" secondItem="NId-Fd-VsX" secondAttribute="bottom" id="g4s-eM-lkx"/>
+                <constraint firstItem="m8n-5E-yhN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="mwK-jd-hC4"/>
+                <constraint firstItem="NId-Fd-VsX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pJy-tc-wxJ"/>
+                <constraint firstItem="NId-Fd-VsX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="q1O-wX-rsY"/>
+                <constraint firstAttribute="trailing" secondItem="m8n-5E-yhN" secondAttribute="trailing" constant="15" id="sI0-ol-EoH"/>
+                <constraint firstItem="MvV-QC-YKv" firstAttribute="top" secondItem="m8n-5E-yhN" secondAttribute="bottom" id="uSx-w4-tZY"/>
+                <constraint firstAttribute="trailing" secondItem="NId-Fd-VsX" secondAttribute="trailing" id="zjQ-4V-CyP"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="NId-Fd-VsX" id="9cP-t2-w77"/>
+                <outlet property="sourceLabel" destination="MvV-QC-YKv" id="riv-fn-jfs"/>
+                <outlet property="titleLabel" destination="m8n-5E-yhN" id="rfX-l9-J8v"/>
+            </connections>
+            <point key="canvasLocation" x="-72.5" y="-268"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,34 @@
+//
+//  RAMItemAnimation.h
+//  MixApp
+//
+//  Created by 陈雪丹 on 16/7/20.
+//  Copyright © 2016年 cxd. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+//@protocol RAMItemAnimationProtocol <NSObject>
+//
+//- (void)playAnimation:(UIImageView *)icon textLabel:(UILabel *)textLabel;
+//
+//- (void)deselectAnimation:(UIImageView *)icon textLabel:(UILabel *)textLabel defaultTextColor:(UIColor *)defaultTextColor;
+//
+//- (void)selectedState:(UIImageView *)icon textLabel:(UILabel *)textLabel;
+//
+//@end
+
+@interface RAMItemAnimation : NSObject
+//<RAMItemAnimationProtocol>
+
+@property (nonatomic, assign)CGFloat duration;
+@property (nonatomic, strong)UIColor *textSelectedColor;
+@property (nonatomic, strong)UIColor *iconSelectedColor;
+
+- (void)playAnimation:(UIImageView *)icon textLabel:(UILabel *)textLabel;
+
+- (void)deselectAnimation:(UIImageView *)icon textLabel:(UILabel *)textLabel defaultTextColor:(UIColor *)defaultTextColor;
+
+- (void)selectedState:(UIImageView *)icon textLabel:(UILabel *)textLabel;
+
+@end

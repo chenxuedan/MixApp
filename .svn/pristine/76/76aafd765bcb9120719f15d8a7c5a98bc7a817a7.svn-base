@@ -1,0 +1,30 @@
+//
+//  HelperPrefixHeader.pch
+//  Demo1
+//
+//  Created by 陈雪丹 on 16/3/14.
+//  Copyright © 2016年 chenxuedan. All rights reserved.
+//
+
+#ifndef Helper_HelperPrefixHeader_pch
+#define Helper_HelperPrefixHeader_pch
+
+#import "Factory.h"
+#import "MyHelper.h"
+#import "UIView+Addition.h"
+#import "BaseViewController.h"
+//#import "Masonry.h"
+#import "FlatUIKit.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "CommonDefines.h"
+#import "CXDHttpOperation.h"
+#import "AFNetworking.h"
+#import "MJRefresh.h"
+#import "SVProgressHUD.h"
+#import "NSString+Extension.h"
+#import "Constans.h"
+#import "MJExtension.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#endif /* HelperPrefixHeader_pch */
